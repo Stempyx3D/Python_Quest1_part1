@@ -1,3 +1,4 @@
+import sys
 from models import Medicine, Antibiotic, Vitamin, Vaccine
 def med_info(medicines) -> None:
     for medicine in medicines:
@@ -19,3 +20,4 @@ if __name__ == "__main__":
         Vaccine(name="Вакцина проти дифтерії та правця (АДП-М)", quantity=15, price=310.0)
     ]
     med_info(medicines)
+    sys.exit(0)

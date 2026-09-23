@@ -47,10 +47,9 @@ class Vaccine(Medicine):
         return "2–8°C, холодильник"
 
     def total_price(self) -> float:
-        new_price = super().total_price()
-        return round(new_price * 1.2, 2)
-    
-    
+        base_price = super().total_price()
+        return round(base_price * 1.2, 2)
+
 
 
 
