@@ -12,7 +12,7 @@ class Invoice(Document):
         return "До сплати 1 500.00 грн."
 class Contract(Document):
     def render(self) -> str:
-        return "Контракт було підписано."
+        return "Контракт."
 class NullDocument(Document):
     def render(self) -> str:
         return ""
@@ -32,14 +32,13 @@ class DocumentFactory:
 
 if __name__ == "__main__":
     test_types = ["report", "invoice", "contract", "unknown_type"]
-
-    for doc_type in test_types:
-        doc = DocumentFactory.create(doc_type)
+    for type in test_types:
+        doc = DocumentFactory.create(type)
         output = doc.render()
         if output:
             print(output)
         else:
-            print(f"Увага, отримано порожній або невідомий документ типу: '{doc_type}'")
+            print(f"Невідомий документ типу: '{type}'")
 
 
 
